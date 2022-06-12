@@ -22,7 +22,6 @@ base = "https://discord.com/api/v9/users/@me"
 
 token = input("KaramveerPlayZ#1337 | Enter Token: ")
 res = httpx.get(base, headers={"Authorization": token})
-print(res.status_code)
 if res.status_code in [204, 200, 201]:
   headers = {"Authorization": token, "X-Audit-Log-Reason": "karamveerplayz-stealer"}
   username = f"{res.json()['username']}#{res.json()['discriminator']}"
